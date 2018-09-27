@@ -1,0 +1,35 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "node server project",
+  "author": "fed",
+  "private": true,
+  "scripts": {
+    "dev": "node ./app.js",
+    "pm2": "pm2 start pm2.config.js",
+    "pm2:dev": "pm2 start pm2.config.js --env dev"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-cache-control": "^2.0.0",
+    "koa-compress": "^3.0.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.3.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.1.1",
+    "koa-session2": "^2.2.6",
+    "koa-static": "^5.0.0",
+    "koa-static-cache": "^5.1.2",
+    "koa2-cors": "^2.0.6",
+    "log4js": "^3.0.5",
+    "mathjs": "^5.0.4",
+    "memcached": "^2.2.2",
+    "moment": "^2.22.2"
+  },
+  "engines": {
+    "node": ">= 7.6.0",
+    "npm": ">= 3.0.0"
+  }
+}
