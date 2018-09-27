@@ -1,7 +1,6 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const koaLogger = require('koa-logger');
-const staticCache  = require('koa-static-cache');
 const static  = require('koa-static');
 const compress = require('koa-compress');
 const cacheControl = require('koa-cache-control');
@@ -41,10 +40,7 @@ const proxy = require('./server/middlewares/proxy');
 app.use(proxy());
 
 // 设置静态服务器资源
-app.use(staticCache(__dirname + '/static', {
-  gzip: true,
-  usePrecompiledGzip: /text|application/i
-}));
+app.use(static(__dirname + '/static'));
 
 // 文件压缩
 app.use(compress({
