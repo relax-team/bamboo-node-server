@@ -3,6 +3,7 @@
  * 重要: pm2 cluster模式下，需要安装 pm2-intercom 模块
  * pm2 install pm2-intercom
  ****************************************************************** */
+const path = require('path');
 const fs = require('fs');
 const log4js = require('log4js');
 const moment = require('moment');
@@ -10,7 +11,7 @@ const moment = require('moment');
 moment.locale('zh-cn');
 
 module.exports = logPath => {
-  logPath = logPath || 'logs/';    //日志存放路径
+  logPath = logPath || path.join(__dirname, '../../logs/');    //日志存放路径
   const layout = {
     type: 'pattern',
     pattern: '%x{time} - %m',
